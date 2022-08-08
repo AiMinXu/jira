@@ -15,15 +15,15 @@ export const cleanObject = (object: any) => {
   return result
 }
 
-export const useMount = (callback: () => void) => {
-  useEffect(() => {
-    callback()
-  }, [callback])
-}
+// export const useMount = (callback: () => void) => {
+//   useEffect(() => {
+//     callback()
+//   }, [callback])
+// }
 
 //自定义hook    用于输入操作的节流
 //使用泛型
-export const useDebounce = (value: any, delay?: number) :any=> {
+export const useDebounce = <V>(value: V, delay?: number)=> {
   const [debounceValue, setDebounceValue] = useState(value)
   useEffect(() => {
     //每次value变化后设置定时器
